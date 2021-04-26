@@ -19,19 +19,19 @@ const User = (props) => {
       <div className="user__links">
         <ul className='list__links'>
           <li>
-            <NavLink to='allarticles'>All articles</NavLink>
+            <NavLink to='/allarticles'>All articles</NavLink>
           </li>
 
           <li>
-            <NavLink to='myarticles'>My articles</NavLink>
+            <NavLink to='/myarticles'>My articles</NavLink>
           </li>
 
           <li>
-            <NavLink to='addarticles'>Add article</NavLink>
+            <NavLink to='/addarticles'>Add article</NavLink>
           </li>
 
           <li>
-            <NavLink to='profile'>Profile</NavLink>
+            <NavLink to='/profile'>Profile</NavLink>
           </li>
         </ul>
       </div>
