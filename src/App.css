@@ -88,13 +88,7 @@ a {
   text-align: center;
   /*border: 1px solid black;*/
 }
-.container__button button {
-  background: none;
-  color: gray;
-  border: 1px solid black;
-  padding: 15px;
-  cursor: pointer;
-}
+
 
 .user__fName-lName {
   margin-top: 20px;
@@ -131,3 +125,35 @@ a {
 .list__links li a {
   color: black;
 }
+
+.posts__container {
+  max-width: 800px;
+}
+button {
+  border: none;
+}
+.wrapper__button {
+  display: flex;
+  /*border: 1px solid black;*/
+  justify-content: space-between;
+}
+.wrapper__button button {
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  color: #F59D49;
+  font-weight: bold;
+}
+.container__button button {
+  background: none;
+  color: gray;
+  border: 1px solid black;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.btnNotActive {
+  opacity: .5;
+  cursor: default !important;
+}
+
