@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 
 const Post = (props) => {
   return (
+
     <div className='container__post'>
       <div className='buttton__main'>
         <NavLink to='/'>Main</NavLink>

@@ -162,6 +162,9 @@ button {
   margin: 0 auto;
 
 }
+.container__post {
+  display: flex;
+}
 .editorClassName {
   /*border: 1px solid black;*/
   background-color: lightgrey;

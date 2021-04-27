@@ -17,7 +17,7 @@ const Posts = (props) => {
         setCounter(--counter);
     }
     const showPosts = (posts) => {
-      console.log(posts)
+      // console.log(posts)
         if(posts && posts[counter] !== undefined ) {
 
             return posts[counter].map(p => {
