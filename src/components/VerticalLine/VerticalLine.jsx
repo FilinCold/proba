@@ -1,12 +1,7 @@
 import React from "react";
 
-
-const VerticalLine = () => {
-  return (
-    <div className='vertical__line'>
-
-    </div>
-  )
-}
+const VerticalLine = () => (
+    <div className='vertical__line'/>
+  );
 
 export default VerticalLine;

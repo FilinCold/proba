@@ -137,14 +137,14 @@ function App() {
       </div>
 
       <div className='wrapper__posts'>
-        <Route exact path='/' render={() => <Posts />} />
+        <Route exact path='/' render={() => <Posts posts={posts}/>} />
         <Route path='/allarticles' render={() => <Posts posts={posts}/>}/>
         <Route path='/myarticles'  render={() => <MyArticles />}/>
         <Route path='/addarticles' render={() => <AddArticles />}/>
         <Route path='/profile' render={() => <Profile />}/>
         {posts.map(p => {
           return (
-            <Route path={`/post/id${p.id}`} render={() => <Post />}/>
+            <Route exact path={`/post/:${p.id}`} render={() => <Post posts={posts}/>}/>
           )
         })}
       </div>

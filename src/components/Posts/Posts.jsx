@@ -13,12 +13,12 @@ const Posts = (props) => {
     }
 
     const changeCounterOnClickPrev = () => {
-        // let check = true;
+
         setCounter(--counter);
     }
     const showPosts = (posts) => {
-
-        if(posts[counter] !== undefined ) {
+      console.log(posts)
+        if(posts && posts[counter] !== undefined ) {
 
             return posts[counter].map(p => {
 
@@ -35,7 +35,7 @@ const Posts = (props) => {
                             {p.text}
                         </div>
                         <div className="show-post">
-                            <NavLink exact to={`/post/id${p.id}`}>Read</NavLink>
+                            <NavLink exact to={`/post/:${p.id}`}>Read</NavLink>
                         </div>
 
                     </div>
@@ -46,13 +46,12 @@ const Posts = (props) => {
         return <p>К сожалению, постов больше нет....</p>
 
     }
-    // debugger;
+
     return (
 
         <div className="posts__container">
 
             {
-
                 showPosts(props.posts)
             }
             <div className="wrapper__button">
