@@ -1,12 +1,12 @@
 import './App.css';
 import Posts from "./components/Posts/Posts";
-import { Route } from "react-router-dom"
+import { Route, useParams } from "react-router-dom"
 import Users from "./components/Users/Users";
 import MyArticles from "./components/MyArticles/MyArticles";
 import AddArticles from "./components/AddArticles/AddArticles";
 import Profile from "./components/Profile/Profile";
 import VerticalLine from "./components/VerticalLine/VerticalLine";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Post from "./components/Posts/Post";
 
 function App() {
@@ -125,30 +125,27 @@ function App() {
 
   ])
   return (
-    <div className="wrapper__user-posts">
-      <div className="wrapper__user">
-        <Route exact path='/' render={() => <Users/>} />
-
+    <div>
+      <div className="wrapper__user-posts">
+        <div className="wrapper__user">
+          <Route exact path='/' render={() => <Users/>} />
+        </div>
+        <div >
+          <Route exact path='/' render={() => <VerticalLine  />} />
+        </div>
+        <div className='wrapper__posts wrapper__user-posts wrapper__user-posts-onePost'>
+          <Route exact path='/' render={() => <Posts posts={posts}/>} />
+          <Route path='/allarticles' render={() => <Posts posts={posts}/>}/>
+          <Route path='/myarticles'  render={() => <MyArticles />}/>
+          <Route path='/addarticles' render={() => <AddArticles />}/>
+          <Route path='/profile' render={() => <Profile />}/>
+          {posts.map(p => {
+            return (
+              <Route exact path={`/post/:${p.id}`} render={() => <Post />}/>
+            )
+          })}
+        </div>
       </div>
-
-      <div >
-        <Route exact path='/' render={() => <VerticalLine  />} />
-
-      </div>
-
-      <div className='wrapper__posts'>
-        <Route exact path='/' render={() => <Posts posts={posts}/>} />
-        <Route path='/allarticles' render={() => <Posts posts={posts}/>}/>
-        <Route path='/myarticles'  render={() => <MyArticles />}/>
-        <Route path='/addarticles' render={() => <AddArticles />}/>
-        <Route path='/profile' render={() => <Profile />}/>
-        {posts.map(p => {
-          return (
-            <Route exact path={`/post/:${p.id}`} render={() => <Post posts={posts}/>}/>
-          )
-        })}
-      </div>
-
     </div>
   );
 }

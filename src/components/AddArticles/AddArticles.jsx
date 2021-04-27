@@ -9,8 +9,22 @@ const AddArticles = () => {
   const [editorState, setEditorState] = useState(() => {
     return EditorState.createEmpty()
   })
+  const [data, setData] = useState([])
   let changeEditorState = (editorState) => {
     setEditorState(editorState);
+  }
+  const [check, setCheck] = useState(false);
+  const showData = () => {
+    const dataText = draftToHtml(convertToRaw(editorState.getCurrentContent()));
+    // const dataText = convertFromRaw(editorState.getCurrentContent());
+    // console.log(dataText)
+    setData(() => {
+      return {
+        ...data,
+        dataText
+      }
+    });
+    setCheck(true);
   }
   return (
     <div>
@@ -21,6 +35,7 @@ const AddArticles = () => {
         editorClassName="editorClassName"
         onEditorStateChange={changeEditorState}
       />
+      <button onClick={showData}>Add</button>
     </div>
   )
 }
