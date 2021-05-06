@@ -1,64 +1,58 @@
 import React from 'react';
+
 import User from "../Users/User";
 import Posts from "../Posts/Posts";
 import MyArticles from "../MyArticles/MyArticles";
 import AddArticles from "../AddArticles/AddArticles";
 import Profile from "../Profile/Profile";
-import {Route, Switch} from "react-router/modules";
+import IfWeDontAuth from "../IfWeDontAuth/IfWeDontAuth";
+import SignUp from "../Account/Register/SignUp";
 
 
 const routes = [
   {
-    path: '/',
+    path: '/main/',
     component: User,
-    routes: [
-      {
-        path: '/allarticles',
-        component: Posts
-      },
-      {
-        path: '/myarticles',
-        component: MyArticles
-      },
-      {
-        path: '/addarticles',
-        component: AddArticles
-      },
-      {
-        path: '/profile',
-        component: Profile
-      }
-    ]
+    withAuth: true,
+    exact: true,
   },
   {
-    path: '/',
-    component: Posts
+    path: '/posts/',
+    component: Posts,
+    withAuth: true,
+    exact: true,
   },
+  {
+    path: '/myarticles/',
+    component: MyArticles,
+    withAuth: true,
+    exact: true,
+  },
+  {
+    path: '/addarticles/',
+    component: AddArticles,
+    withAuth: true,
+    exact: true,
+  },
+  {
+    path: '/profile/',
+    component: Profile,
+    withAuth: true,
+    exact: true,
+  },
+  {
+    path: '/signin/',
+    component: IfWeDontAuth,
+    withAuth: false,
+    exact: true,
+  },
+  {
+    path: '/signup/',
+    component: SignUp,
+    withAuth: false,
+    exact: true,
+  },
+
 ]
 
-const RouteConfigExample = () => {
-  return (
-    <div>
-      <Switch>
-        {
-          routes.map((route,i) => {
-           return <RouteWithSubRoutes key={i} {...route}/>
-          })
-        }
-      </Switch>
-    </div>
-  )
-}
-
-const RouteWithSubRoutes = (route) => {
-  return (
-    <Route
-      path={route.path}
-      render={props => {
-       return <route.component {...props} routes={route.routes}/>
-      }}
-    />
-  )
-}
-
-export default RouteConfigExample;
+export default routes;

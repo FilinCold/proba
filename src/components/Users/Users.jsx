@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 import User from "./User";
 
@@ -36,18 +36,18 @@ const Users = (props) => {
         {check ? <User user={user}/> : null}
       </div>
       <div className="container__button">
-        {check
-          ? <button
-            onClick={logOut}
-          >
-            Logout
-        </button>
-          : <button
-            onClick={logIn}
-          >
-            LogIn
-          </button>
-        }
+        {/*{check*/}
+        {/*  ? <button*/}
+        {/*    onClick={logOut}*/}
+        {/*  >*/}
+        {/*    Logout*/}
+        {/*  </button>*/}
+        {/*  : <button*/}
+        {/*    onClick={logIn}*/}
+        {/*  >*/}
+        {/*    LogIn*/}
+        {/*  </button>*/}
+        {/*}*/}
       </div>
     </div>
   )

@@ -18,7 +18,7 @@ const SignUp = (props) => {
         console.log(form.confirmPassword);
     }
     const handleSignInClick = () => {
-        history.push('/login')
+        history.push('/signin/')
     }
     const handleOnChange = (e, property) => {
         setForm((prevProps) => {

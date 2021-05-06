@@ -14,9 +14,10 @@ const SignIn = (props) => {
     // props.setCheck(true)
     console.log(formLogin.email);
     console.log(formLogin.password);
+
   }
   const handleSignUpClick = () => {
-    history.push('/signup')
+    history.push('/signup/')
   }
   const handleOnChange = (e, property) => {
 
