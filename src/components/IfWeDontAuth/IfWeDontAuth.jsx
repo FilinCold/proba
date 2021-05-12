@@ -3,7 +3,8 @@ import SignIn from "../Account/Login/SignIn";
 import Posts from "../Posts/Posts";
 
 
-const IfWeDontAuth = () => {
+const IfWeDontAuth = (props) => {
+  // console.log(`==========>props`, props);
   const [check, setCheck] = useState(false);
   const setLogIn = () => {
     setCheck(true);

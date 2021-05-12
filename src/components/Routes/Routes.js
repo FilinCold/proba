@@ -7,6 +7,7 @@ import AddArticles from "../AddArticles/AddArticles";
 import Profile from "../Profile/Profile";
 import IfWeDontAuth from "../IfWeDontAuth/IfWeDontAuth";
 import SignUp from "../Account/Register/SignUp";
+import Post from "../Posts/Post";
 
 
 const routes = [
@@ -20,6 +21,11 @@ const routes = [
     path: '/posts/',
     component: Posts,
     withAuth: true,
+    exact: true,
+  },
+  {
+    path: '/posts/:id',
+    component: Post,
     exact: true,
   },
   {

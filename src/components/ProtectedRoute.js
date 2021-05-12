@@ -5,10 +5,12 @@ import {useEffect, useState} from "react";
 
 const ProtectedRoute = (route) => {
   // const isLoggedIn = false;
+  console.log(`==========>ProtectedRoute`);
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const changeStateAuthorization = () => {
     setIsLoggedIn(false)
   }
+
   if (isLoggedIn) {
     return (
       <div className='wrapper__post' style={{display: 'flex'}}>
@@ -18,13 +20,14 @@ const ProtectedRoute = (route) => {
             path={route.path}
             exact={route.exact}
             render={(prop) => (
-              <route.component {...prop} routes={route.routes}/>
+              <route.component {...prop} routes={route.routes} />
             )}
           />
         </div>
       </div>
     );
   }
+
   return (
     !window.location.href.includes('/signin/')
       ?
