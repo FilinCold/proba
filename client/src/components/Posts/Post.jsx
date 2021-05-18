@@ -1,6 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 
+
 const Post = (props) => {
   const allPosts = [
     {
@@ -170,7 +171,8 @@ const Post = (props) => {
     },
 
   ];
-  let isAuth = Boolean(localStorage.getItem('isAuth'));
+  let isAuth = Boolean(localStorage.getItem('token'));
+
   return (
     <div className='post'>
       <div className='buttton__main'>
@@ -180,17 +182,16 @@ const Post = (props) => {
         {
           allPosts.map(e => {
             return e.post.map(e => {
-              return <div dangerouslySetInnerHTML={{__html: e.text}}></div>
+              console.log(e.text);
+              return (
+                <div dangerouslySetInnerHTML={{__html: e.text}}></div>
+              )
             })
           })
         }
       </div>
-
-
     </div>
-
   )
 }
-
 
 export default Post;

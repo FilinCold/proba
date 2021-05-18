@@ -7,7 +7,7 @@ import routes from "./components/Routes/Routes";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
-import './App.css';
+import './App.scss';
 
 const App = () => {
 

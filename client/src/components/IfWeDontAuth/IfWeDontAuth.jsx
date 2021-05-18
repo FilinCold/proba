@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from "react";
+
 import SignIn from "../Account/Login/SignIn";
 import Posts from "../Posts/Posts";
 
 
 const IfWeDontAuth = (props) => {
-  // console.log(`==========>props`, props);
-  const [check, setCheck] = useState(false);
-  // let check = false
 
+  const [check, setCheck] = useState(false);
   const setLogIn = () => {
     setCheck(true)
   }
@@ -22,15 +21,14 @@ const IfWeDontAuth = (props) => {
               <button onClick={setLogIn}>Sign In</button>
             </div>
             <div className='wrapper__posts'>
-              <Posts/>
+              <Posts />
             </div>
           </div>
-          : <SignIn  />
+          :
+          <SignIn />
       }
-
     </div>
   )
 }
-
 
 export default IfWeDontAuth;

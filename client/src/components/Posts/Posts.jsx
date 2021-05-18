@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
-import Post from "./Post";
 
 
 const Posts = (props) => {
+
   const posts = [
     [
       {
@@ -118,22 +118,14 @@ const Posts = (props) => {
     ]
 
   ];
-
   let [counter, setCounter] = useState(0);
-  const [check, setCheck] = useState(true);
-
   const changeCounterOnClickNext = () => {
-
     setCounter(++counter);
   }
   const changeCounterOnClickPrev = () => {
-
     setCounter(--counter);
   }
-
-
   const showPosts = (posts) => {
-
     if (posts[counter] !== undefined) {
       return posts[counter].map(p => {
         return (
@@ -158,13 +150,10 @@ const Posts = (props) => {
       })
     }
     return <p>К сожалению, постов больше нет....</p>
-
   }
 
   return (
-
     <div className="wrapper__post">
-
       {
         showPosts(posts)
       }
@@ -174,15 +163,12 @@ const Posts = (props) => {
                   onClick={counter == 0 ? null : changeCounterOnClickPrev}>PREV
           </button>
         </div>
-
         <div className="button__next">
           <button onClick={changeCounterOnClickNext}>NEXT</button>
         </div>
       </div>
     </div>
-
   )
 }
-
 
 export default Posts;

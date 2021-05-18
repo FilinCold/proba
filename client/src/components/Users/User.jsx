@@ -1,33 +1,37 @@
 import React, {useEffect, useState} from "react";
-
-import imgMan from '../../man.jpg'
 import {Link, NavLink, useHistory} from "react-router-dom";
 
+import {getUser} from "../../services";
+
+import imgMan from '../../man.jpg'
 
 const User = (props) => {
   const history = useHistory();
-
-
   const [check, setCheck] = useState(false)
   const [user, setUser] = useState({
     id: 0,
     img: 'https://www.loyatic.eu/wp-content/uploads/2017/11/iStock_000020004182Medium1.jpg',
-    firstName: 'John',
-    lastName: 'Doe',
+    firstName: '',
+    // lastName: 'Doe',
     aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, earum libero mollitia officia pariatur quas.',
   })
 
+  useEffect(() => {
+    getUser()
+      .then(data => setUser({
+        ...user,
+        firstName: data.map(u => {
+          return u.name
+        })
+      }));
+
+  }, []);
+  console.log(`==========> User`);
   return (
 
     <div className='profile__user'>
       <div className="user">
         <div className='container__user'>
-
-
-          {/*//   <Link to='/posts/'>allarticles</Link>*/}
-          {/*//   <Link to='/myarticles/'>/myarticles/</Link>*/}
-          {/*//   <Link to='/addarticles/'>/addarticles/</Link>*/}
-          {/*//   <Link to='/profile/'>/profile/</Link>*/}
           <div className='container__user_img-logout'>
             <div className="user__img">
               <img src={imgMan} alt=""/>
@@ -74,6 +78,5 @@ const User = (props) => {
 
   )
 }
-
 
 export default User;

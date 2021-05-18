@@ -61,3 +61,11 @@ module.exports.register = async function (req, res) {
     }
   }
 }
+module.exports.getUser = async function(req,res) {
+  try {
+    const user = await User.find();
+    res.status(201).json(user);
+  } catch (e) {
+    errorHandler(res, e);
+  }
+}

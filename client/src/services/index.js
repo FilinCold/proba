@@ -36,6 +36,15 @@ export const getAllPosts = (data) => {
   }).then(data => data.data)
 };
 
+export const getUser = (data) => {
+  const url = `${urls.USER}getuser`;
+
+  return ajaxWrapper({
+    method: 'GET',
+    url,
+  }).then(data => data.data)
+};
+
 export const addEvent = (data) => {
   const url = `${urls.EVENTS}`;
   return ajaxWrapper({

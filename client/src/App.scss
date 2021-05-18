@@ -12,6 +12,7 @@ body {
 .wrapper__user-posts {
   display: flex;
   max-width: 1000px;
+  flex-wrap: wrap;
   /*border: 1px solid black;*/
   /*justify-content: center;*/
   margin: 20px auto;
@@ -41,11 +42,20 @@ body {
   background: gray;
   margin: 0 50px 0 30px;
 }
-
-.wrapper__post {
+.wrapper__post1 {
   max-width: 800px;
+  width: 100%;
   padding: 0 10px;
   margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper__post {
+  max-width: 800px;
+  width: 100%;
+  padding: 0 10px;
+  margin: 20px auto;
+
   /*margin-left: 100px;*/
   /*margin-bottom: 20px;*/
 }
@@ -54,6 +64,7 @@ body {
   padding: 10px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
 }
 .date-tag {
   font-size: 12px;
@@ -70,10 +81,17 @@ body {
 }
 .container__user_img-logout {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .date-tag span:nth-child(2) {
   color: #F59D49;
+}
+
+.wrapper__post * {
+  word-wrap: break-word;
+  max-width: 450px;
 }
 
 .wrapper__post .title {
@@ -114,6 +132,7 @@ a {
 
 .profile__user {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   max-width: 250px;
   max-height: 500px;
@@ -172,6 +191,7 @@ button {
 }
 .wrapper__button {
   display: flex;
+  flex-wrap: wrap;
   /*border: 1px solid black;*/
   justify-content: space-between;
 }
@@ -201,6 +221,7 @@ button {
 }
 .wrapper__button-posts {
   display: flex;
+  flex-wrap: wrap;
 }
 .container__button {
   min-width: 100px;
@@ -229,13 +250,22 @@ button {
 
 }
 .editorClassName {
-  /*border: 1px solid black;*/
-  background-color: lightgrey;
+  //border: .1px solid gray;
+  border: 1px solid #F1F1F1;
+  padding: 5px;
+  //background-color: lightgrey;
+}
+.button__addPost {
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+
 }
 .post {
   /*margin: 0 auto;*/
   /*border: 1px solid black;*/
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   position: relative;
   /*max-width: 450px;*/
@@ -311,6 +341,7 @@ p {
 .images__wrapper {
   max-width: 400px;
   display: flex;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 .images__wrapper img {
@@ -436,7 +467,10 @@ p {
 .list__links a.active {
   text-decoration: underline;
 }
-
+.style__mypost {
+  margin: 20px 0;
+  border: 1px solid black;
+}
 /*.profile__user:after {*/
 /*  content: '';*/
 /*  position: absolute;*/
