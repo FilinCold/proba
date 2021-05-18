@@ -11,7 +11,6 @@ const keys = require('./config/keys');
 const passport = require('passport');
 
 
-
 mongoose.connect(keys.mongoURI)
     .then(() => console.log(`==========>mongodb connected` ))
     .catch(error => console.log(`==========>error`, error));

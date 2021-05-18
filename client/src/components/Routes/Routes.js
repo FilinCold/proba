@@ -1,6 +1,6 @@
 import React from 'react';
 
-import User from "../Users/User";
+import User from "../User/User";
 import Posts from "../Posts/Posts";
 import MyArticles from "../MyArticles/MyArticles";
 import AddArticles from "../AddArticles/AddArticles";

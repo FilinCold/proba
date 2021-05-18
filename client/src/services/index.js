@@ -18,6 +18,7 @@ export const registration = (data) => {
     data,
   }).then(data => data.data)
 };
+
 export const addPost = (data) => {
   const url = `${urls.POST}post`;
 
@@ -27,6 +28,7 @@ export const addPost = (data) => {
     data,
   }).then(data => data.data)
 };
+
 export const getAllPosts = (data) => {
   const url = `${urls.POST}allposts`;
 

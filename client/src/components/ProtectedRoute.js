@@ -1,18 +1,14 @@
 import {Redirect, Route, useHistory} from "react-router-dom";
-import User from "./Users/User";
+import User from "./User/User";
 import {useEffect, useState} from "react";
 
 
 const ProtectedRoute = (route) => {
-  // const isLoggedIn = false;
   const history = useHistory();
-
   const [isLoggedIn, setIsLoggedIn] = useState(true)
   const changeStateAuthorization = () => {
-
     localStorage.removeItem('token');
     history.push('/signin/');
-    // setIsLoggedIn(false)
   }
   let isAuth = Boolean(localStorage.getItem('token'));
   if (isAuth) {
@@ -24,7 +20,7 @@ const ProtectedRoute = (route) => {
             path={route.path}
             exact={route.exact}
             render={(prop) => (
-              <route.component {...prop} routes={route.routes} />
+              <route.component {...prop} routes={route.routes}/>
             )}
           />
         </div>
@@ -46,8 +42,6 @@ const ProtectedRoute = (route) => {
           pathname: '/signup/',
         }}
       />
-
-
   )
 }
 

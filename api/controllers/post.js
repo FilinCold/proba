@@ -13,6 +13,7 @@ module.exports.addPost = async function (req, res) {
     errorHandler(res, e);
   }
 }
+
 module.exports.getPosts = async function (req, res) {
   try {
     const posts = await Post.find();

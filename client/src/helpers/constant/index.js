@@ -4,5 +4,4 @@ export const urls = {
   API: api,
   USER: `${api}auth/`,
   POST: `${api}addpost/`,
-
 };

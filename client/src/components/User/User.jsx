@@ -15,7 +15,6 @@ const User = (props) => {
     // lastName: 'Doe',
     aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, earum libero mollitia officia pariatur quas.',
   })
-
   useEffect(() => {
     getUser()
       .then(data => setUser({
@@ -26,9 +25,8 @@ const User = (props) => {
       }));
 
   }, []);
-  console.log(`==========> User`);
-  return (
 
+  return (
     <div className='profile__user'>
       <div className="user">
         <div className='container__user'>
@@ -53,17 +51,14 @@ const User = (props) => {
                     All articles
                   </NavLink>
                 </li>
-
                 <li>
                   <NavLink id='myarticles' to='/myarticles/'>My
                     articles</NavLink>
                 </li>
-
                 <li>
                   <NavLink id='addarticles' to='/addarticles/'>Add
                     article</NavLink>
                 </li>
-
                 <li>
                   <NavLink id='profile' to='/profile/'>
                     Profile
@@ -75,7 +70,6 @@ const User = (props) => {
         </div>
       </div>
     </div>
-
   )
 }
 

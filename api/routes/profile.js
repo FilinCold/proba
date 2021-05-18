@@ -5,6 +5,5 @@ const upload = require('../middleware/upload');
 
 router.post('/:id', upload.single('image'), controller.editProfile);
 
-
 module.exports = router;
 

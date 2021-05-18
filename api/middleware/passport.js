@@ -9,7 +9,6 @@ const options = {
   secretOrKey: keys.jwt
 }
 
-
 module.exports = passport => {
   passport.use(
     new JwtStrategy(options, async (payload, done) => {
@@ -24,7 +23,6 @@ module.exports = passport => {
       } catch (e) {
         console.log(`==========>e`, e);
       }
-      
     })
   )
 }

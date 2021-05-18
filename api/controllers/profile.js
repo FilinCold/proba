@@ -12,14 +12,4 @@ module.exports.editProfile = async function (req, res) {
   } catch (e) {
     errorHandler(res, e);
   }
-  // try {
-  //   const edit = await Profile.findOneAndUpdate(
-  //     {_id: req.params.id},
-  //     {$set: req.body},
-  //     {new: true}
-  //   );
-  //   res.status(200).json(edit);
-  // } catch (e) {
-  //     errorHandler(res, e);
-  // }
 }
