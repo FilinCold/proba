@@ -9,6 +9,7 @@ body {
   font-family: Arial;
 
 }
+
 .wrapper__user-posts {
   display: flex;
   max-width: 1000px;
@@ -17,6 +18,7 @@ body {
   /*justify-content: center;*/
   margin: 20px auto;
 }
+
 .wrapper__user-posts-onePost {
   display: block;
   max-width: 100%;
@@ -24,24 +26,28 @@ body {
   border: none;
   margin: 0;
 }
+
 .wrapper__user {
   position: relative;
 }
+
 .wrapper__user:after {
   content: '';
   position: absolute;
-    top: 1%;
-    left: 105%;
-    width: 1px;
-    height: 500px;
-    background: gray;
+  top: 1%;
+  left: 105%;
+  width: 1px;
+  height: 500px;
+  background: gray;
 }
+
 .vertical__line {
   width: 1px;
   height: 500px;
   background: gray;
   margin: 0 50px 0 30px;
 }
+
 .wrapper__post1 {
   max-width: 800px;
   width: 100%;
@@ -50,6 +56,7 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+
 .wrapper__post {
   max-width: 800px;
   width: 100%;
@@ -59,6 +66,7 @@ body {
   /*margin-left: 100px;*/
   /*margin-bottom: 20px;*/
 }
+
 .wrapper__signin-posts {
   max-width: 800px;
   padding: 10px;
@@ -66,6 +74,7 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+
 .date-tag {
   font-size: 12px;
   font-weight: bold;
@@ -76,9 +85,11 @@ body {
   margin-right: 10px;
   color: gray;
 }
+
 .about-user {
   /*max-width: 200px;*/
 }
+
 .container__user_img-logout {
   display: flex;
   flex-wrap: wrap;
@@ -109,13 +120,15 @@ a {
   text-decoration: none;
 }
 
-.show-post a{
+.show-post a {
   color: blue;
 }
+
 .user {
   /*margin-right: 80px;*/
 }
-.user__img img{
+
+.user__img img {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -140,6 +153,7 @@ a {
   padding: 0 10px;
   margin-right: 50px;
 }
+
 .container__user {
   /*text-align: center;*/
   /*border: 1px solid black;*/
@@ -150,9 +164,11 @@ a {
   margin-top: 20px;
   font-weight: bold;
 }
+
 .fName {
   margin-right: 5px;
 }
+
 .user__aboutMe {
   margin-top: 20px;
   text-align: left;
@@ -186,15 +202,18 @@ a {
   max-width: 800px;
   /*border: 1px solid black;*/
 }
+
 button {
   border: none;
 }
+
 .wrapper__button {
   display: flex;
   flex-wrap: wrap;
   /*border: 1px solid black;*/
   justify-content: space-between;
 }
+
 .wrapper__button button {
   padding: 10px;
   cursor: pointer;
@@ -202,6 +221,7 @@ button {
   color: #F59D49;
   font-weight: bold;
 }
+
 .container__button button {
   background: none;
   color: gray;
@@ -211,6 +231,7 @@ button {
   display: block;
 
 }
+
 .user__logout-button button {
   background: none;
   color: gray;
@@ -219,10 +240,12 @@ button {
   cursor: pointer;
   display: block;
 }
+
 .wrapper__button-posts {
   display: flex;
   flex-wrap: wrap;
 }
+
 .container__button {
   min-width: 100px;
   max-height: 500px;
@@ -230,6 +253,7 @@ button {
   margin-right: 50px;
   border-right: 1px solid gray;
 }
+
 .btnNotActive {
   opacity: .5;
   cursor: default !important;
@@ -240,6 +264,7 @@ button {
   margin: 0 auto;
 
 }
+
 .container__post {
   /*display: flex;*/
   max-width: 450px;
@@ -249,18 +274,21 @@ button {
   /*border: 1px solid black;*/
 
 }
+
 .editorClassName {
   //border: .1px solid gray;
   border: 1px solid #F1F1F1;
   padding: 5px;
   //background-color: lightgrey;
 }
+
 .button__addPost {
   padding: 5px;
   cursor: pointer;
   margin-top: 10px;
 
 }
+
 .post {
   /*margin: 0 auto;*/
   /*border: 1px solid black;*/
@@ -273,13 +301,16 @@ button {
 
   /*justify-content: space-between;*/
 }
-.post .container__posts{
+
+.post .container__posts {
   margin-right: 100px;
   max-width: 450px;
 }
+
 .post h1 {
   text-align: center;
 }
+
 .list {
   margin: 30px 0;
   padding: 0 0 0 15px;
@@ -301,13 +332,16 @@ button {
 
   border-radius: 2vw;
 }
+
 .list li {
   margin-bottom: 10px;
 }
+
 .list li a {
   color: blue;
   text-decoration: underline;
 }
+
 .list li:last-child {
 }
 
@@ -315,9 +349,11 @@ button {
   margin-top: 30px;
 
 }
+
 p {
   line-height: 25px;
 }
+
 .style__header2 {
   margin-top: 50px;
 }
@@ -327,9 +363,11 @@ p {
   margin: 30px auto 0;
 
 }
-.img__style  img {
+
+.img__style img {
   max-width: 100%;
 }
+
 .title__style {
   margin-top: 30px;
 }
@@ -338,21 +376,25 @@ p {
   margin-top: 30px;
   text-align: center;
 }
+
 .images__wrapper {
   max-width: 400px;
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
 }
+
 .images__wrapper img {
   max-width: 100%;
   width: 150px;
   height: 80px;
 }
+
 .titles__name-app a {
   color: blue;
   text-decoration: underline;
 }
+
 .wrapper__name-app {
   margin-top: 40px;
 }
@@ -384,6 +426,7 @@ p {
   font-size: 14px;
 
 }
+
 .box-label {
   margin-bottom: 10px;
 }
@@ -396,16 +439,20 @@ p {
   /*border: none;*/
   border: 1px solid gray;
 }
+
 .box-input input:focus {
   border: 1px solid black;
 }
+
 .form__box {
   margin-bottom: 10px;
 
 }
+
 .box-input {
   /*border: 1px solid black;*/
 }
+
 #style-submit {
   min-width: 242px;
   font-weight: bold;
@@ -423,6 +470,7 @@ p {
   /*border: 1px solid black;*/
   text-align: center;
 }
+
 .block-text a {
   color: #BABABA;
   /*text-decoration: underline;*/
@@ -467,10 +515,42 @@ p {
 .list__links a.active {
   text-decoration: underline;
 }
+
 .style__mypost {
   margin: 20px 0;
   border: 1px solid black;
 }
+
+.block__title-subtitle {
+  //border: 1px solid #F1F1F1;
+  font-size: 20px;
+  span {
+    margin-right: 5px;
+  }
+  input {
+    font-size: 20px;
+    padding: 5px;
+    max-width: 300px;
+  }
+  .style__title {
+    margin-bottom: 20px;
+  }
+  .style__hashtag {
+    margin-bottom: 20px;
+  }
+  .style__description {
+    display: flex;
+    margin-bottom: 20px;
+    span {
+      margin-right: 5px;
+    }
+    textarea {
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+}
+
 /*.profile__user:after {*/
 /*  content: '';*/
 /*  position: absolute;*/

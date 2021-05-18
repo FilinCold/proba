@@ -8,7 +8,7 @@ const MyArticles = () => {
   const [posts, setPosts] = useState(false);
   useEffect(() => {
     getAllPosts()
-      .then(data => setPosts(data))
+      .then(data => data)
   },[])
 
   return (
@@ -16,14 +16,14 @@ const MyArticles = () => {
       {
         posts
           ? posts.map((element, index) => {
-            let e
-            if($(element.text).filter('h1')[0]) {
-             e = $(element.text).filter('h1').get(0).outerHTML;
-              console.log(`==========>e`, e);
+            console.log(`==========>element`, element);
+            if(element.hashtag) {
               return (
-                <div className='style__mypost' dangerouslySetInnerHTML={{__html: e}} key={index}></div>
+                <div className='style__mypost' dangerouslySetInnerHTML={{__html: element.text}} key={index}></div>
               )
             }
+
+
           })
           :
           null

@@ -14,10 +14,18 @@ const AddArticles = () => {
   let changeEditorState = (editorState) => {
     setEditorState(editorState);
   }
+  const [dataForm, setDataForm] = useState({
+    title: '',
+    hashTag: '',
+    description: '',
+  })
   const [data, setData] = useState([])
   const showData = () => {
     const dataText = draftToHtml(convertToRaw(editorState.getCurrentContent()));
     addPost({
+      title: dataForm.title,
+      hashTag: dataForm.hashTag,
+      description: dataForm.description,
       text: dataText
     }).then(d => d);
     setData(() => {
@@ -28,9 +36,38 @@ const AddArticles = () => {
     localStorage.removeItem('items');
     localStorage.setItem('items', JSON.stringify(data))
   })
+  const changeDataInput = (e,type) => {
+    setDataForm((prevProps) => {
+      return {
+        ...prevProps,
+        [type]: e.target.value
+      }
+    })
+  }
 
   return (
     <div className='wrapper__post'>
+      <div className="block__title-subtitle">
+        <div className="style__title">
+          <span>Title: </span>
+          <input onChange={(e) => {
+            changeDataInput(e, 'title')
+          }} type="text"/>
+        </div>
+        <div className="style__hashtag">
+          <span>HashTag: </span>
+          <input onChange={(e) => {
+            changeDataInput(e, 'hashTag')
+          }} type="text"/>
+        </div>
+        <div className="style__description">
+          <span>Description: </span>
+          <textarea onChange={(e) => {
+            changeDataInput(e, 'description')
+          }} type="text"/>
+        </div>
+      </div>
+
       <Editor
         editorState={editorState}
         toolbarClassName="toolbarClassName"
