@@ -8,6 +8,7 @@ const ProtectedRoute = (route) => {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
   const changeStateAuthorization = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('email');
     history.push('/signin/');
   }
   let isAuth = Boolean(localStorage.getItem('token'));

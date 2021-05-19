@@ -13,17 +13,20 @@ const User = (props) => {
     img: 'https://www.loyatic.eu/wp-content/uploads/2017/11/iStock_000020004182Medium1.jpg',
     firstName: '',
     // lastName: 'Doe',
-    aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, earum libero mollitia officia pariatur quas.',
+    aboutme: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, earum libero mollitia officia pariatur quas.',
   })
   useEffect(() => {
     getUser()
       .then(data => setUser({
         ...user,
         firstName: data.map(u => {
-          return u.name
+          if (u.email === localStorage.getItem('email')) {
+            return u.name
+          }
         })
       }));
   }, []);
+
 
   return (
     <div className='profile__user'>
@@ -42,7 +45,7 @@ const User = (props) => {
               <span className='fName'>{user.firstName}</span>
               <span className="lName">{user.lastName}</span>
             </div>
-            <div className="user__aboutMe">{user.aboutMe}</div>
+            <div className="user__aboutMe">{user.aboutme}</div>
             <div className="user__links">
               <ul className='list__links'>
                 <li>

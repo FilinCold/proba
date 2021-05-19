@@ -11,14 +11,8 @@ const MyPosts = (props) => {
   useEffect(() => {
     getAllPosts()
       .then(data => setPosts([data]))
-  },[]);
+  }, []);
 
-  //  setPosts(() => {
-  //         data.map(d => {
-  //           console.log(`==========>dr`, dr);
-  //           return d;
-  //         })
-  //       }))
   const changeCounterOnClickNext = () => {
     setCounter(++counter);
   }
@@ -26,8 +20,9 @@ const MyPosts = (props) => {
     setCounter(--counter);
   }
   const showPosts = (posts) => {
-    console.log(`==========>posts`, posts);
-    if (posts[counter] !== undefined) {
+    console.log(`==========>posts`, posts[counter]);
+
+    if (posts[counter] !== undefined && posts[counter].length !== 0) {
 
       return posts[counter].map(p => {
         return (
@@ -51,6 +46,7 @@ const MyPosts = (props) => {
 
       })
     }
+
     return <p>К сожалению, постов больше нет....</p>
   }
 
@@ -67,7 +63,8 @@ const MyPosts = (props) => {
         </div>
         <div className="button__next">
           <button className={posts[counter] == undefined ? "btnNotActive" : null}
-                  onClick={posts[counter] == undefined ? null : changeCounterOnClickNext}>NEXT</button>
+                  onClick={posts[counter] == undefined ? null : changeCounterOnClickNext}>NEXT
+          </button>
         </div>
       </div>
     </div>

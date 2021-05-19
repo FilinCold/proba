@@ -354,6 +354,7 @@ button {
 .buttton__main1 {
   color: black;
   margin-right: 50px;
+  margin-bottom: 50px;
   a {
     color: black;
     border: 1px solid gray;
@@ -590,7 +591,15 @@ p {
     }
   }
 }
-
+.change__data-profile {
+  margin-top: 50px;
+  border: 1px solid #F1F1F1;
+  border-radius: 5px;
+  padding: 5px;
+}
+.profile-block {
+  margin: 10px 0;
+}
 /*.profile__user:after {*/
 /*  content: '';*/
 /*  position: absolute;*/

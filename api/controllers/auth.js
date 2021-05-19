@@ -70,3 +70,17 @@ module.exports.getUser = async function(req,res) {
     errorHandler(res, e);
   }
 }
+
+module.exports.editProfile = async function(req,res) {
+  console.log(`==========>req.body`, req.body);
+  const user = new User({
+    aboutme: req.body.aboutme,
+  })
+  try {
+    await user.save();
+    res.status(201).json(user);
+  } catch (e) {
+    errorHandler(res, e);
+  }
+}
+

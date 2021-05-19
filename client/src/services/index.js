@@ -28,7 +28,15 @@ export const addPost = (data) => {
     data,
   }).then(data => data.data)
 };
-
+export const editProfile = (data) => {
+  console.log(`==========>data`, data);
+  const url = `${urls.USER}`;
+  return ajaxWrapper({
+    method: 'POST',
+    url,
+    data,
+  }).then(data => data.data)
+};
 export const getAllPosts = (data) => {
   const url = `${urls.POST}allposts`;
 

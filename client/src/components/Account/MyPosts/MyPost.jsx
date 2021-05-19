@@ -37,6 +37,7 @@ const MyPost = (props) => {
 
   return (
     <div className='post'>
+
       <div className='buttton__main1'>
         <NavLink onClick={showPosts} to={isAuth ? '/myarticles/' : '/signin/'} >Main</NavLink>
       </div>

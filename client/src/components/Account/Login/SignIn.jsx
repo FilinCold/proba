@@ -15,7 +15,9 @@ const SignIn = (props) => {
   const [error, setError] = useState(false)
   const handleSubmit = (e) => {
     e.preventDefault()
+
     login(formLogin).then((res,req) => localStorage.setItem('token', res.token))
+      .then((res,req) => localStorage.setItem('email', formLogin.email))
       .then(
         () => {
           history.push('/posts/');

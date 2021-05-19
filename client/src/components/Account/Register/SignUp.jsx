@@ -15,10 +15,11 @@ const SignUp = (props) => {
   const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault()
-    registration(form).then(res => res)
+    registration(form).then(res => res);
+    history.push('/signin/');
   }
   const handleSignInClick = () => {
-    history.push('/signin/')
+    history.push('/signin/');
   }
   const handleOnChange = (e, property) => {
     setForm((prevProps) => {
