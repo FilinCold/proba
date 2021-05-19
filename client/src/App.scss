@@ -206,6 +206,28 @@ a {
 button {
   border: none;
 }
+.button__next {
+  button {
+    position: relative;
+    &:before {
+      content: '→';
+      position: absolute;
+      top: 5px;
+      left: -20px;
+    }
+  }
+}
+.button__prev {
+  button {
+    position: relative;
+    &:before {
+      content: '←';
+      position: absolute;
+      top: 5px;
+      left: -20px;
+    }
+  }
+}
 
 .wrapper__button {
   display: flex;
@@ -220,6 +242,7 @@ button {
   background: none;
   color: #F59D49;
   font-weight: bold;
+  font-size: 1.625rem;
 }
 
 .container__button button {
@@ -306,7 +329,11 @@ button {
   margin-right: 100px;
   max-width: 450px;
 }
-
+.post .container__posts1 {
+  margin-left: 20px;
+  margin-right: 100px;
+  max-width: 450px;
+}
 .post h1 {
   text-align: center;
 }
@@ -323,6 +350,19 @@ button {
   position: absolute;
   top: 0;
   left: 20px;
+}
+.buttton__main1 {
+  color: black;
+  margin-right: 50px;
+  a {
+    color: black;
+    border: 1px solid gray;
+    padding: 10px 25px;
+    border-radius: 2vw;
+  }
+  //position: absolute;
+  //top: 0;
+  //left: 20px;
 }
 
 .buttton__main a {

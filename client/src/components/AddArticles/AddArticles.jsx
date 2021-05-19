@@ -16,15 +16,16 @@ const AddArticles = () => {
   }
   const [dataForm, setDataForm] = useState({
     title: '',
-    hashTag: '',
+    hashtag: '',
     description: '',
   })
   const [data, setData] = useState([])
   const showData = () => {
+    // console.log(`==========>dataForm.hashTag`, dataForm.hashtag);
     const dataText = draftToHtml(convertToRaw(editorState.getCurrentContent()));
     addPost({
       title: dataForm.title,
-      hashTag: dataForm.hashTag,
+      hashtag: dataForm.hashtag,
       description: dataForm.description,
       text: dataText
     }).then(d => d);
@@ -57,7 +58,7 @@ const AddArticles = () => {
         <div className="style__hashtag">
           <span>HashTag: </span>
           <input onChange={(e) => {
-            changeDataInput(e, 'hashTag')
+            changeDataInput(e, 'hashtag')
           }} type="text"/>
         </div>
         <div className="style__description">
@@ -76,8 +77,8 @@ const AddArticles = () => {
         onEditorStateChange={changeEditorState}
       />
       <button className='button__addPost' onClick={showData}>Add</button>
-      <div dangerouslySetInnerHTML={data ? {__html: data.join('')} : null}>
-      </div>
+      {/*<div dangerouslySetInnerHTML={data ? {__html: data.join('')} : null}>*/}
+      {/*</div>*/}
     </div>
   )
 }

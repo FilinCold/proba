@@ -8,6 +8,8 @@ import Profile from "../Profile/Profile";
 import IfWeDontAuth from "../IfWeDontAuth/IfWeDontAuth";
 import SignUp from "../Account/Register/SignUp";
 import Post from "../Posts/Post";
+import MyPosts from "../Account/MyPosts/MyPosts";
+import MyPost from "../Account/MyPosts/MyPost";
 
 
 const routes = [
@@ -27,11 +29,16 @@ const routes = [
     path: '/posts/:id',
     component: Post,
     exact: true,
-
   },
   {
     path: '/myarticles/',
-    component: MyArticles,
+    component: MyPosts,
+    withAuth: true,
+    exact: true,
+  },
+  {
+    path: '/myarticles/post/:id',
+    component: MyPost,
     withAuth: true,
     exact: true,
   },

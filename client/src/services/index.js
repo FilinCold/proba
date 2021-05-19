@@ -20,8 +20,8 @@ export const registration = (data) => {
 };
 
 export const addPost = (data) => {
+  console.log(`==========>data`, data);
   const url = `${urls.POST}post`;
-
   return ajaxWrapper({
     method: 'POST',
     url,

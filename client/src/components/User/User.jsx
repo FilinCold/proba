@@ -23,7 +23,6 @@ const User = (props) => {
           return u.name
         })
       }));
-
   }, []);
 
   return (

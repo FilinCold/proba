@@ -8,7 +8,7 @@ const MyArticles = () => {
   const [posts, setPosts] = useState(false);
   useEffect(() => {
     getAllPosts()
-      .then(data => data)
+      .then(data => setPosts(data))
   },[])
 
   return (
@@ -19,7 +19,7 @@ const MyArticles = () => {
             console.log(`==========>element`, element);
             if(element.hashtag) {
               return (
-                <div className='style__mypost' dangerouslySetInnerHTML={{__html: element.text}} key={index}></div>
+                <div className='style__mypost' dangerouslySetInnerHTML={{__html: element.hashtag}} key={index}></div>
               )
             }
 

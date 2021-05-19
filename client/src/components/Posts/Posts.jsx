@@ -18,7 +18,7 @@ const Posts = (props) => {
 
       }, {
       id: 1,
-      data: 'August 2017',
+      data: ' 2017',
       tag: 'TYPOGRAPHY',
       title: 'Humane Typography in the Digital Age',
       text: 'An Essay on Typography by Eric Gill takes the reader back to the year 1930. ' +
@@ -62,7 +62,7 @@ const Posts = (props) => {
     [
       {
         id: 5,
-        data: 'August 2017',
+        data: 'August ',
         tag: 'TYPOGRAPHY',
         title: 'Humane Typography in the Digital Age',
         text: 'An Essay on Typography by Eric Gill takes the reader back to the year 1930. ' +
@@ -127,25 +127,29 @@ const Posts = (props) => {
   }
   const showPosts = (posts) => {
     if (posts[counter] !== undefined) {
-      return posts[counter].map(p => {
-        return (
-          <div className='wrapper__post' key={p.id}>
 
-            <div className="date-tag">
-              <span>{p.data.toUpperCase()}</span>
-              <span>{p.tag}</span>
+      return posts[counter].map(p => {
+        if(p.id) {
+          return (
+            <div className='wrapper__post' key={p.id}>
+
+              <div className="date-tag">
+                <span>{p.data.toUpperCase()}</span>
+                <span>{p.tag}</span>
+              </div>
+              <div className="title">
+                {p.title}
+              </div>
+              <div className="text">
+                {p.text}
+              </div>
+              <div className="show-post">
+                <NavLink to={`/posts/:${p.id}`}>Read</NavLink>
+              </div>
             </div>
-            <div className="title">
-              {p.title}
-            </div>
-            <div className="text">
-              {p.text}
-            </div>
-            <div className="show-post">
-              <NavLink to={`/posts/:${p.id}`}>Read</NavLink>
-            </div>
-          </div>
-        )
+          )
+        }
+
 
       })
     }
@@ -160,11 +164,16 @@ const Posts = (props) => {
       <div className="wrapper__button">
         <div className="button__prev">
           <button className={counter == 0 ? "btnNotActive" : null}
-                  onClick={counter == 0 ? null : changeCounterOnClickPrev}>PREV
-          </button>
+                  onClick={counter == 0
+                    ? null
+                    : changeCounterOnClickPrev}> PREV</button>
         </div>
         <div className="button__next">
-          <button onClick={changeCounterOnClickNext}>NEXT</button>
+          <button
+            className={posts[counter] == undefined ? "btnNotActive" : null}
+            onClick={posts[counter] == undefined
+              ? null
+              : changeCounterOnClickNext}>NEXT</button>
         </div>
       </div>
     </div>
