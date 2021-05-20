@@ -73,10 +73,13 @@ module.exports.getUser = async function(req,res) {
 
 module.exports.editProfile = async function(req,res) {
   console.log(`==========>req.body`, req.body);
-  const user = new User({
-    aboutme: req.body.aboutme,
+
+  const user = await User.findOne({
+    _id: req.body.id,
   })
   try {
+    console.log(`==========>user`, user);
+    user.aboutMe = req.body.aboutMe
     await user.save();
     res.status(201).json(user);
   } catch (e) {

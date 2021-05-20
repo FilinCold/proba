@@ -30,9 +30,9 @@ export const addPost = (data) => {
 };
 export const editProfile = (data) => {
   console.log(`==========>data`, data);
-  const url = `${urls.USER}`;
+  const url = `${urls.USER}editprofile`;
   return ajaxWrapper({
-    method: 'POST',
+    method: 'PUT',
     url,
     data,
   }).then(data => data.data)

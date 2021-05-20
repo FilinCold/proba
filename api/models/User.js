@@ -17,9 +17,14 @@ const userSchema = new Schema({
     },
     aboutMe: {
         type: String,
-        default: '',
+        default: 'About me',
         required: false,
     },
+    img: {
+        type: String,
+        default: '',
+        required: false,
+    }
 });
 
 module.exports = mongoose.model('users', userSchema)

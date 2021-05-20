@@ -4,7 +4,6 @@ import {Redirect} from 'react-router'
 
 import {login, registration} from "../../../services";
 
-
 const SignIn = (props) => {
 
   const history = useHistory();

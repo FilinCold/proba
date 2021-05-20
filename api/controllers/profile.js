@@ -6,6 +6,7 @@ module.exports.editProfile = async function (req, res) {
     image: req.file ? req.file.path : '',
     aboutMe: req.body.aboutMe,
   })
+
   try {
     await profile.save();
     res.status(201).json(profile);
