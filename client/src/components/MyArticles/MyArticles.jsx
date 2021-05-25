@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 
 import {getAllPosts} from "../../services";
-import $ from 'jquery'
 
 const MyArticles = () => {
 
